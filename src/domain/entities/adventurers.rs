@@ -17,7 +17,6 @@ pub struct AdventurerEntity {
 //Connect with Tables by set macro
 #[diesel(table_name = adventurers)]
 pub struct RegisterAdventurerEntity {
-    pub id:i32,
     pub username: String,
     pub password:String,
     pub created_at: NaiveDateTime,
