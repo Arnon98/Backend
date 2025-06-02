@@ -1,6 +1,6 @@
 use chrono::NaiveDateTime;
 use serde::{Deserialize, Serialize};
-use crate::{domain::entities::quests::{AddQuestEntity, EditQuestEntity}, infrastructure::postgres::schema::quests::guild_commander_id};
+use crate::{domain::entities::quests::{AddQuestEntity, EditQuestEntity}};
 use super::quest_statuses::QuestStatus;
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct QuestModel {
@@ -21,7 +21,7 @@ pub struct AddQuestModel {
 }
 
 impl AddQuestModel {
-    pub fn to_entity(&self, guild_commander_id: i32) -> AddQuestEntity {
+    pub fn to_entity(&self, guild_commander_id:i32) -> AddQuestEntity {
         AddQuestEntity {
             name: self.name.clone(),
             description: self.description.clone(),
